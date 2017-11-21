@@ -30,7 +30,9 @@ namespace ASPMVCmarket.Controllers
             return new List<Car>
             {
                 new Car() { Id = 1, Name= "Model S" },
-                new Car() { Id = 2, Name = "Model M3"}
+                new Car() { Id = 2, Name = "Model M3"},
+                new Car() { Id = 3, Name = "Model F2"},
+                new Car() { Id = 4, Name = "Model Sport"}
             };
         }
     }
