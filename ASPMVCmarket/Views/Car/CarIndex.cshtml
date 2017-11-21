@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<ASPMVCmarket.Models.Car>
+
+@{
+    ViewBag.Title = "Cars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Car Index View</h2>
+<table class="table table-striped table-hover table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            CARS:
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                @car.Name
+            </tr>
+        }
+    </tbody>
+</table>
+
