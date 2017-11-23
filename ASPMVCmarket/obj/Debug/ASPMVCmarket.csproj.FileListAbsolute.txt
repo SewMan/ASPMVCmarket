@@ -80,3 +80,7 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\Microsoft.Owin.Security.MicrosoftAccou
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.csprojResolveAssemblyReference.cache
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.pdb
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.InitialModel.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.csproj.GenerateResource.Cache
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddIsSubscribedToCustomer.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddMembershipType.resources
