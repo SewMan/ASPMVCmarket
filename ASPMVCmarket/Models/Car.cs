@@ -9,5 +9,8 @@ namespace ASPMVCmarket.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTime ReleaseData { get; set; }
+        public int AmountInStock { get; set; }
+        public string Description { get; set; }
     }
 }

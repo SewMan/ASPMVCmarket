@@ -9,11 +9,24 @@ namespace ASPMVCmarket.Controllers
 {
     public class CarController : Controller
     {
+        //Baza danych -> _context
+        private ApplicationDbContext _context;
+
+        public CarController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: http://localhost:62273/Car/CarIndex
         //ActionResult Subtypes -> ViewResult - Renders a specifed view to the response stream
         public ViewResult CarIndex()
         {
-            var cars = GetCars();
+            var cars = _context.Cars.ToList();
             return View(cars);
         }
 
@@ -34,6 +47,18 @@ namespace ASPMVCmarket.Controllers
                 new Car() { Id = 3, Name = "Model F2"},
                 new Car() { Id = 4, Name = "Model Sport"}
             };
+        }
+
+        public ActionResult CarDetails(int id)
+        {
+            var car = _context.Cars.SingleOrDefault(c => c.Id == id);
+
+            if (car == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(car);
         }
     }
 }
