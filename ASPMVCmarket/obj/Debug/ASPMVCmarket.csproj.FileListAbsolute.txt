@@ -86,3 +86,7 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddIsSub
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddMembershipType.resources
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.PopulateMembershipTypes.resources
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddMembershipTypeName.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateMembershipTypeNames.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddBirthTimeToCustomerModel.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.CarModelUpdate.resources

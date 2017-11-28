@@ -19,7 +19,7 @@
         {
             <tr>
                 <td>@car.Id</td>
-                <td>@car.Name</td>
+                <td>@Html.ActionLink(car.Name, "CarDetails", "Car", new { id = car.Id }, null)</td>
             </tr>
         }
     </tbody>
