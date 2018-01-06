@@ -96,3 +96,5 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Web.Http.WebHost.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Net.Http.Formatting.xml
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Web.Http.xml
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Web.Http.WebHost.xml
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\AutoMapper.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\AutoMapper.xml
