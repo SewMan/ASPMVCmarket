@@ -30,3 +30,65 @@ textarea {
 .input-validation-error {
     border: 2px solid red;
 }
+
+/*Bootbox confirmation changes*/
+.bootbox-confirm {
+    opacity: 0.2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    opacity: 1 !important;
+}
+
+.modal-dialog {
+    top: 50%;
+    padding-bottom: 290px;
+}
+/*Bootbox confirmation changes*/
+
+
+/*Bootstrap-lux table changes*/
+.table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.table-bordered {
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.dataTables_filter {
+    width: 225px;
+    float: right;
+}
+
+.dataTables_length {
+    width: 225px;
+    float: left;
+}
+
+.dataTables_info {
+    width: 225px;
+    float: left;
+}
+
+.paginate_button {
+    cursor: default;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+}
+
+.paginate_button.current {
+    color: #fff;
+    background-color: #1a1a1a;
+}

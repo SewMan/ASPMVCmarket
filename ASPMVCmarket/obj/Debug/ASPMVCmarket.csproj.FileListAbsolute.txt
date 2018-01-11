@@ -98,3 +98,4 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Web.Http.xml
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Web.Http.WebHost.xml
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\AutoMapper.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\AutoMapper.xml
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.csproj.CoreCompileInputs.cache
