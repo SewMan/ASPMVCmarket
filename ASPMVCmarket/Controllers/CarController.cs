@@ -7,6 +7,7 @@ using ASPMVCmarket.Models;
 
 namespace ASPMVCmarket.Controllers
 {
+    [AllowAnonymous]
     public class CarController : Controller
     {
         //Baza danych -> _context
@@ -36,17 +37,6 @@ namespace ASPMVCmarket.Controllers
         {
             var car = new Car() { Name = "Clio III" };
             return View(car);
-        }
-
-        private IEnumerable<Car> GetCars()
-        {
-            return new List<Car>
-            {
-                new Car() { Id = 1, Name= "Model S" },
-                new Car() { Id = 2, Name = "Model M3"},
-                new Car() { Id = 3, Name = "Model F2"},
-                new Car() { Id = 4, Name = "Model Sport"}
-            };
         }
 
         public ActionResult CarDetails(int id)

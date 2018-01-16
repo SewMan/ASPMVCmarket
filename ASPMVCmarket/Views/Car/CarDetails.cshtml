@@ -5,9 +5,126 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
-<p>Release Date: @Model.ReleaseData</p>
-<p>Amount In Stock: @Model.AmountInStock</p>
-<p>Description: @Model.Description</p>
+<hr style="margin-top:30px; margin-bottom:15px;">
 
+<div class="card border-light" style="margin-top: 35px;">
 
+    <h1 class="card-header text-white bg-primary" style="text-align: center; font-size: 4rem; border: 1px solid;">
+        @Model.Name
+    </h1>
+
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">
+            @Model.Slogan1
+        </h5>
+
+        <h6 class="card-subtitle text-muted" style="text-align: center;">
+            @Model.Slogan2
+        </h6>
+    </div>
+
+    <img style="height: 50%; width: 50%;
+                margin-left: auto; margin-right:auto;
+                margin-top:30px; margin-bottom:30px;"
+         src="@Url.Content(Model.ImagePath)">
+
+    <hr style="margin: 0;">
+
+    <div class="card-body">
+        <hr style="margin: 0; padding-top: 16px;">
+        <h3 class="card-subtitle" style="text-align: center; margin-top: 10px;">unique</h3>
+        <p class="card-text text-primary" style="text-align: center;">
+            @Model.ShortDescription
+        </p>
+        <hr style="margin: 0;">
+    </div>
+
+    <hr style="margin: 0;">
+
+    <img style="height: 70%; width: 70%;
+                margin-left: auto; margin-right:auto;
+                margin-top:30px; margin-bottom:30px;"
+         src="~/Content/images/vehicles/modelXb.png">
+
+    <div class="card-body">
+        <hr style="margin: 0; padding-top: 16px;">
+        <h2 class="card-subtitle" style="text-align: center; margin-top: 10px;">description</h2>
+        <p class="card-text" style="text-align: center;">
+            @Model.ShortDescription
+            @Model.ShortDescription
+            @Model.ShortDescription
+        </p>
+        <hr style="margin: 0;">
+    </div>
+
+    <img style="height: 90%; width: 90%;
+                margin-left: auto; margin-right: auto;
+                margin-top: 60px; margin-bottom: 60px;"
+         src="~/Content/images/vehicles/modelXc.png">
+
+    <div style="border: 2px solid; margin-bottom: 40px; margin-top: 20px; padding:0;" class="card-header">
+        <h2 class="card-title" style="text-align: center; margin-top: 40px; margin-bottom: 0px;">technical details</h2>
+        <div style="display: flex; margin-bottom: 40px;">
+            <div style="height: 100%; width:33.3%; margin-left:auto; margin-right:auto;">
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Transmission</h5>
+                    <h6 class="card-text" style="text-align: center;">Single-speed transaxle gearboxes</h6>
+                </span>
+
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Wheelbase</h5>
+                    <h6 class="card-text" style="text-align: center;">2,965 mm</h6>
+                </span>
+
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Curb weight</h5>
+                    <h6 style="text-align: center;">2,509 kg</h6>
+                </span>
+            </div>
+
+            <div style="height: 100%; width:33.3%; margin-left:auto; margin-right:auto;">
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Motor</h5>
+                    <h6 class="card-text" style="text-align: center;">Dual Motor AWD 90D</h6>
+                </span>
+
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Body style</h5>
+                    <h6 class="card-text" style="text-align: center;">5-door SUV</h6>
+                </span>
+
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Production</h5>
+                    <h6 style="text-align: center;">2015–present</h6>
+                </span>
+            </div>
+
+            <div style="height: 100%; width:33.3%; margin-left:auto; margin-right:auto;">
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Length</h5>
+                    <h6 class="card-text" style="text-align: center;">5,036 mm</h6>
+                </span>
+
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Width</h5>
+                    <h6 class="card-text" style="text-align: center;">2,017 mm</h6>
+                </span>
+
+                <span>
+                    <h5 class="card-text text-primary" style="text-align: center; margin-bottom:10px; margin-top:30px;">Height</h5>
+                    <h6 style="text-align: center;">1,684 mm</h6>
+                </span>
+            </div>
+        </div>
+
+        <div style="width:100%; padding-top:20px; padding-bottom: 15px; margin-bottom: 50px !important;" class="card text-white bg-warning mb-4">
+            <h6 class="card-title text-white" style="text-align: center;">stock price:</h6>
+            <h1 class="card-title text-white" style="text-align: center; font-size: 2.7rem">49 999$</h1>
+        </div>
+    </div>
+
+    <div class="card-footer text-muted" style="border-bottom: 1px solid rgba(0, 0, 0, 0.125);">
+        <a href="@Url.Action("CarIndex", "Car")" class="btn btn-outline-secondary" style="float:left">back</a>
+        <a href="#" class="btn btn-outline-primary" style="float:right">order</a>
+    </div>
+</div>
