@@ -32,7 +32,7 @@
     <img style="height: 50%; width: 50%;
                     margin-left: auto; margin-right:auto;
                     margin-top:30px; margin-bottom:30px;"
-         src="@Url.Content(car.ImagePath)">
+         src="@Url.Content(car.ImagePath1)">
 
     <hr style="margin: 0;">
     <div class="card-body">
@@ -43,8 +43,8 @@
         <hr style="margin: 0;">
     </div>
 
-    <div class="card-footer text-muted">
-        <div class="btn btn-outline-secondary" style="float:right;">
+    <div class="card-footer">
+        <div class="btn btn-outline-secondary" style="width:100%;">
             @Html.ActionLink("See details", "CarDetails", "Car", new { id = car.Id }, new { style = "text-decoration: none;" })
         </div>
         @*@Html.ActionLink(" See details >>", "CarDetails", "Car", new { id = car.Id }, new { style = "float:right" })*@

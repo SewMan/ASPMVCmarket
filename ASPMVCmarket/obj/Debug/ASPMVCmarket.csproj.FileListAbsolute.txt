@@ -106,3 +106,6 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.WebPages.resources.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.WebPages.Deployment.resources.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.WebPages.Razor.resources.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddSlogansImagePathShortDescription.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateCarModel.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateCarModel1.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddedRequiredParamInCarModel.resources
