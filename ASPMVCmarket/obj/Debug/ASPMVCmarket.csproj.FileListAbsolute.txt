@@ -109,3 +109,4 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddSloga
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateCarModel.resources
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateCarModel1.resources
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddedRequiredParamInCarModel.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateIdentityModel.resources

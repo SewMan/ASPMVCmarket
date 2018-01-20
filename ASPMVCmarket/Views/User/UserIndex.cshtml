@@ -1,39 +1,30 @@
-﻿@model IEnumerable<ASPMVCmarket.Models.Customer>
-
-@*
-    +    Note: I've set the model for this view to IEnumerable<Customer>.
-    +    This is a simple interface implemented by the list class. Since
-    +    in this view we only want to iterate over this list, and we don't
-    +    need any of the operations in the List class (eg Add, Remove, etc),
-    +    it's better to use the IEnumerable interface, which allows use to
-    +    iterate over the list. If in the future, we replace the List with a
-    +    different data structure, as long as it is enumerable, our view code
-    +    will remain unchanged.
-*@
-
-@{
+﻿@{
     ViewBag.Title = "TESLA | Users";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="verticallyCentered">
-    <span>Customers:</span>
-    <input type="button" class="btn btn-primary btn-sm float-right" value="Add Customer" onclick="location.href='@Url.Action("New", "Customer")'" />
-</h2>
+<div class="card" style="margin-bottom: 20px;">
+    <div class="card-body text-white bg-info border-info border">
+        <h1 class="card-title text-white" style="text-align: center; margin-bottom:10px;">@ViewBag.Title</h1>
+            <h6 class="card-subtitle mb-2 text-white" style="text-align: center;">
+                Welcome in the administrator's Users Panel mode.
+            </h6>
+    </div>
+</div>
 
 <hr>
 
-<table id="users" class="table table-bordered table-hover">
-    <thead class="thead-light">
-        <tr>
+<table id="users" class="table table-bordered border-info text-dark">
+    <thead class="thead-light border border-info">
+        <tr class="border-info" style="border-top: 2px solid rgba(0, 0, 0, 0.05) !important;">
             <th>ID:</th>
             <th>Email:</th>
-            @*<th>Discount Rate:</th>
-            <th>Memebership Type:</th>*@
+            <th>User Name:</th>
+            <th>Name:</th>
+            <th>Surname:</th>
             <th>Delete</th>
         </tr>
     </thead>
-
     <tbody></tbody>
 </table>
 
@@ -49,22 +40,34 @@
                 columns: [
                     {
                         data: "id",
-                        //render: function (data, type, customer)
-                        //{
-                        //    return "<a href='/customer/edit/" + customer.id + "'>" + customer.id + "</a>";
-                        //}
+                        render: function (data, type, user)
+                        {
+                            return "<a href='/user/userdetails/" + user.id + "'>" + user.id + "</a>";
+                        }
                     },
 
                     {
                         data: "email"
                     },
 
-                    //{
-                    //    data: "id",
-                    //    //render: function (data) {
-                    //    //    return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
-                    //    //}
-                    //}
+                    {
+                        data: "userName"
+                    },
+
+                    {
+                        data: "name"
+                    },
+
+                    {
+                        data: "surname"
+                    },
+
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-user-id=" + data + ">Delete</button>";
+                        }
+                    }
                 ]
             });
 
@@ -75,7 +78,7 @@
                         function (result) {
                             if (result) {
                                 $.ajax({
-                                    url: "/api/users/" + button.attr("data-customer-id"),
+                                    url: "/api/users/" + button.attr("data-user-id"),
                                     method: "DELETE",
                                     success: function () {
                                         table.row(button.parents("tr")).remove().draw();

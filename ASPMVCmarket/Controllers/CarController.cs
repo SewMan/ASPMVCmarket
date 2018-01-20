@@ -16,6 +16,7 @@ namespace ASPMVCmarket.Controllers
         public CarController()
         {
             _context = new ApplicationDbContext();
+            //_context.us
         }
 
         protected override void Dispose(bool disposing)

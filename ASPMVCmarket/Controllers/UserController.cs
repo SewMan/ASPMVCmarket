@@ -20,19 +20,19 @@ namespace ASPMVCmarket.Controllers
             return View();
         }
 
-        ////GET: http://localhost:62273/User/UserDetails
-        //public ActionResult UserDetails(string id)
-        //{
-        //    var context = new IdentityDbContext();
-        //    var identityUser = context.Users.SingleOrDefault(u => u.Id == id);
+        //GET: http://localhost:62273/User/UserDetails
+        public ActionResult UserDetails(string id)
+        {
+            var context = new ApplicationDbContext();
+            var identityUser = context.Users.SingleOrDefault(u => u.Id == id);
 
-        //    if (identityUser == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
+            if (identityUser == null)
+            {
+                return HttpNotFound();
+            }
 
-        //    return View(identityUser);
-        //}
+            return View(identityUser);
+        }
 
         ////GET: http://localhost:62273/Customer/New
         //public ActionResult New()
@@ -47,56 +47,47 @@ namespace ASPMVCmarket.Controllers
         //    return View("CustomerForm", viewModel);
         //}
 
-        ////Save new customer to the database
-        //[HttpPost] //<- can only be called by HttpPost not HttpGet
-        //[ValidateAntiForgeryToken] //<- Token for Cross-Site Request Forgery (CSRF) prevention
-        //public ActionResult Save(Customer customer)
-        //{
-        //    // Validation
-        //    if (!ModelState.IsValid)
-        //    {
-        //        var viewModel = new CustomerFormViewModel
-        //        {
-        //            Customer = customer,
-        //            MembershipTypes = _context.MembershipTypes.ToList()
-        //        };
+        //Save new customer to the database
+        [HttpPost] //<- can only be called by HttpPost not HttpGet
+        [ValidateAntiForgeryToken] //<- Token for Cross-Site Request Forgery (CSRF) prevention
+        public ActionResult UserSave(ApplicationUser user)
+        {
+            // Validation
+            if (!ModelState.IsValid)
+            {
+                return HttpNotFound();
+            }
 
-        //        return View("CustomerForm", viewModel);
-        //    }
+            var context = new ApplicationDbContext();
+            var identityUserInDb = context.Users.Single(u => u.Id == user.Id);
 
-        //    if (customer.Id == 0)
-        //        _context.Customers.Add(customer);
-        //    else
-        //    {
-        //        var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+            identityUserInDb.Name = user.Name;
+            identityUserInDb.Surname = user.Surname;
+            identityUserInDb.Email = user.Email;
 
-        //        customerInDb.Name = customer.Name;
-        //        customerInDb.BirthTime = customer.BirthTime;
-        //        customerInDb.MembershipTypeId = customer.MembershipTypeId;
-        //        customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
-        //    }
+            identityUserInDb.Email = user.Email;
+            identityUserInDb.BirthDate = user.BirthDate;
+            identityUserInDb.PhoneNumber = user.PhoneNumber;
+
+            identityUserInDb.Street = user.Street;
+            identityUserInDb.City = user.City;
+            identityUserInDb.CityCode = user.CityCode;
             
+            context.SaveChanges();
 
-        //    _context.SaveChanges();
+            return RedirectToAction("UserIndex", "User");
+        }
 
-        //    return RedirectToAction("CustomerIndex", "Customer");
-        //}
+        //Edit customer from the database
+        public ActionResult UserEdit(string id)
+        {
+            var context = new ApplicationDbContext();
+            var user = context.Users.SingleOrDefault(u => u.Id == id);
 
-        ////Edit customer from the database
-        //public ActionResult Edit(int id)
-        //{
-        //    var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (user == null)
+                return HttpNotFound();
 
-        //    if (customer == null)
-        //        return HttpNotFound();
-
-        //    var viewModel = new CustomerFormViewModel
-        //    {
-        //        Customer = customer,
-        //        MembershipTypes = _context.MembershipTypes.ToList()
-        //    };
-
-        //    return View("CustomerForm", viewModel);
-        //}
+            return View("UserEdit", user);
+        }
     }
 }

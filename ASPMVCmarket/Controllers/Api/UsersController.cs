@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity.EntityFramework;
+using ASPMVCmarket.Models;
+
 
 namespace ASPMVCmarket.Controllers.Api
 {
@@ -13,7 +15,7 @@ namespace ASPMVCmarket.Controllers.Api
         // GET /api/users
         public IEnumerable<IdentityUser>GetUsers()
         {
-            var context = new IdentityDbContext();
+            var context = new ApplicationDbContext();
             var users = context.Users.ToList();
             return users;
         }
@@ -21,7 +23,7 @@ namespace ASPMVCmarket.Controllers.Api
         // GET /api/users/1
         public IdentityUser GetUser(string id)
         {
-            var context = new IdentityDbContext();
+            var context = new ApplicationDbContext();
             var identityUser = context.Users.SingleOrDefault(u => u.Id == id);
 
             if (identityUser == null)
@@ -32,12 +34,12 @@ namespace ASPMVCmarket.Controllers.Api
 
         // POST /api/users
         [HttpPost]
-        public IdentityUser CreateUser(IdentityUser identityUser)
+        public IdentityUser CreateUser(ApplicationUser identityUser)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var context = new IdentityDbContext();
+            var context = new ApplicationDbContext();
             context.Users.Add(identityUser);
             context.SaveChanges();
 
@@ -46,12 +48,12 @@ namespace ASPMVCmarket.Controllers.Api
 
         // PUT /api/users/1
         [HttpPut]
-        public void UpdateUser(string id, IdentityUser identityUser)
+        public void UpdateUser(string id, ApplicationUser identityUser)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var context = new IdentityDbContext();
+            var context = new ApplicationDbContext();
             var identityUserInDb = context.Users.SingleOrDefault(u => u.Id == id);
 
             if (identityUserInDb == null)
@@ -77,7 +79,7 @@ namespace ASPMVCmarket.Controllers.Api
         [HttpDelete]
         public void DeleteUser(string id)
         {
-            var context = new IdentityDbContext();
+            var context = new ApplicationDbContext();
             var identityUserInDb = context.Users.SingleOrDefault(u => u.Id == id);
 
             if (identityUserInDb == null)
