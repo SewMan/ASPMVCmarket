@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ASPMVCmarket.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -15,8 +16,6 @@ namespace ASPMVCmarket.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
@@ -26,5 +25,16 @@ namespace ASPMVCmarket.Controllers
 
             return View();
         }
+
+        public ActionResult News()
+        {
+            return View();
+        }
+
+        public ActionResult Founder()
+        {
+            return View();
+        }
+
     }
 }

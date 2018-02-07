@@ -99,3 +99,14 @@ C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\System.Web.Http.WebHost.xml
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\AutoMapper.dll
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\AutoMapper.xml
 C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.csproj.CoreCompileInputs.cache
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.Helpers.resources.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.Mvc.resources.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.Razor.resources.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.WebPages.resources.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddSlogansImagePathShortDescription.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateCarModel.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateCarModel1.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.AddedRequiredParamInCarModel.resources
+C:\GIT_ROOT\ASPMVCmarket\ASPMVCmarket\obj\Debug\ASPMVCmarket.Migrations.UpdateIdentityModel.resources

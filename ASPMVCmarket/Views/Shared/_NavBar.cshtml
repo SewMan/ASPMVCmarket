@@ -1,33 +1,52 @@
 ﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
+    <a href='@Url.Action("Index", "Home")'>
+        <img style="height: 80px;" src="~/Content/images/navbar_logo_transparent.png" />
+    </a>
+
+        <div class="container" style="padding-left: 0px;">
 
 
-        <div class="navbar-brand">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <div class="navbar-brand">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @*@Html.ActionLink("TESLA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
 
-            </button>
-            @Html.ActionLink("TESLA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="collapse navbar-collapse" id="navbarColor01">
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("News", "Home")">news</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("CarIndex", "Car")">cars</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact", "Home")">contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">about</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Founder", "Home")">founder</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("UserIndex", "User")">users</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0 navbar-text">
+                    @Html.Partial("_LoginPartial")
+                </form>
+            </div>
+
         </div>
-
-        <div class="collapse navbar-collapse" id="navbarColor01">
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("CarIndex", "Car")">cars</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("CustomerIndex", "Customer")">customers</a>
-                </li>
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0 navbar-text">
-                @Html.Partial("_LoginPartial")
-            </form>
-        </div>
-
-    </div>
 </nav>
 
 <hr>

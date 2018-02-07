@@ -55,10 +55,6 @@ textarea {
     border-top: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-.table-bordered {
-    border: 2px solid rgba(0, 0, 0, 0.05);
-}
-
 .dataTables_filter {
     width: 225px;
     float: right;
@@ -91,4 +87,28 @@ textarea {
 .paginate_button.current {
     color: #fff;
     background-color: #1a1a1a;
+}
+/*Bootstrap-lux table changes*/
+
+/*Custom classes*/
+.noBackgroundColor {
+    background-color: white;
+    padding: 40px 0 50px;
+}
+
+.paddingBottom {
+    padding-bottom: 50px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.fitParent {
+    height: 100%;
+    width: 100%;
+}
+
+.maxNavbarHeight {
+    height: 80px !important;
 }

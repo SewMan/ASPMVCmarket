@@ -2,26 +2,80 @@
 @model IEnumerable<ASPMVCmarket.Models.Car>
 
 @{
-    ViewBag.Title = "Cars";
+    ViewBag.Title = "TESLA | Cars";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Cars</h2>
-<table class="table table-striped table-hover table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th>cars:</th>
-        </tr>
-    </thead>
+<div class="card" style="margin-bottom: 40px;">
+    <div class="card-body text-white bg-primary">
+        <h1 class="card-title text-white" style="text-align: center; margin-bottom:10px; font-size: 2.7rem;">vehicles</h1>
+        <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;">
+            Browse through our greatests products and find the perfect car for You and your family!
+        </h6>
+        <p class="card-text" style="text-align: center;">
+            A brand offering full-electric cars that have captured the attention of luxury buyers,
+            Tesla is helping increase awareness of EVs, with the large Model S hatchback, three-row Model X
+            crossover, and upcoming Model 3 that will carry a base price below $40,000.
+        </p>
+    </div>
+</div>
 
-    <tbody>
-        @foreach (var car in Model)
-        {
-            <tr>
-                <td>@car.Id</td>
-                <td>@Html.ActionLink(car.Name, "CarDetails", "Car", new { id = car.Id }, null)</td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+@foreach (var car in Model)
+{
+<div class="card border-dark" style="margin-top: 35px; margin-bottom: 35px;">
+    <h2 class="card-header bg-primary text-white" style="text-align: center;">@car.Name</h2>
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">@car.Slogan1</h5>
+        <h6 class="card-subtitle text-muted" style="text-align: center;">@car.Slogan2</h6>
+    </div>
+    <img style="height: 50%; width: 50%;
+                    margin-left: auto; margin-right:auto;
+                    margin-top:30px; margin-bottom:30px;"
+         src="@Url.Content(car.ImagePath1)">
+
+    <hr style="margin: 0;">
+    <div class="card-body">
+        <hr style="margin: 0; padding-top: 16px;">
+        <p class="card-text text-primary" style="text-align: center;">
+            @car.ShortDescription
+        </p>
+        <hr style="margin: 0;">
+    </div>
+
+    <div class="card-footer">
+        <div class="btn btn-outline-secondary" style="width:100%;">
+            @Html.ActionLink("See details", "CarDetails", "Car", new { id = car.Id }, new { style = "text-decoration: none;" })
+        </div>
+        @*@Html.ActionLink(" See details >>", "CarDetails", "Car", new { id = car.Id }, new { style = "float:right" })*@
+    </div>
+</div>
+    <hr>
+}
+
+
+@*
+    BLACK
+    <hr style="margin: 0;">
+    <div class="card-body text-white bg-primary">
+        <hr style="margin: 0; padding-top: 16px; border-color:white;">
+        <p class="card-text text-white" style="text-align: center;">
+            @car.ShortDescription
+        </p>
+        <hr style="margin: 0; border-color:white;">
+    </div>
+*@
+
+@*
+    WHITE
+    <hr style="margin: 0;">
+    <div class="card-body">
+        <hr style="margin: 0; padding-top: 16px;">
+        <p class="card-text text-primary" style="text-align: center;">
+            @car.ShortDescription
+        </p>
+        <hr style="margin: 0;">
+    </div>
+*@
+
 

@@ -1,0 +1,185 @@
+﻿@model ASPMVCmarket.Models.Car
+@{
+    ViewBag.Title = "TESLA | Vehicle Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="margin-bottom: 20px;">
+    <div class="card-body text-white bg-info border-info border">
+        <h1 class="card-title text-white" style="text-align: center; margin-bottom:10px;">@ViewBag.Title</h1>
+
+@if (@Model.Id == null)
+{
+        <h6 class="card-subtitle mb-2 text-white" style="text-align: center;">
+            Welcome in the administrator's Add New Mode.
+        </h6>
+}
+else
+{
+    <h6 class="card-subtitle mb-2 text-white" style="text-align: center;">
+        Welcome in the administrator's Edit Mode.
+    </h6>
+}
+
+    </div>
+</div>
+
+<div>
+    @using (Html.BeginForm("CarSave", "Car"))
+    {
+        <div style="width: 100%; margin-bottom:40px; margin-top:40px;">
+            <h2 class="card-title text-info" style="text-align: center;">Vehicle essentials</h2>
+            <div style="display: flex; width:100%;">
+                <div class="form-group text-primary" style="width: 50%; text-align: center; margin-top: 10px; margin-bottom: 15px; padding-left:20px; padding-right: 20px;">
+                    @Html.LabelFor(m => m.Name)
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", style = "max-width: none;" })
+                    <small id="emailHelp" class="form-text text-info">Please provide vehicle name.</small>
+                </div>
+                <div class="form-group text-primary" style="width: 50%; text-align: center; margin-top: 10px; margin-bottom: 15px; padding-left:20px; padding-right: 20px;">
+                    @Html.LabelFor(m => m.DetPrice)
+                    @Html.TextBoxFor(m => m.DetPrice, new { @class = "form-control", style = "max-width: none;" })
+                    <small id="emailHelp" class="form-text text-info">Please provide vehicle price.</small>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; margin-top: 25px; margin-bottom: 35px; padding-bottom: 25px; padding-top:25px; border: 1px solid #1F9BCF;">
+            @*Slogans section*@
+            <div style="width: 100%; height: 300px;">
+                <h2 class="card-title text-info" style="text-align: center; margin-bottom:10px;">vehicle slogans</h2>
+                <div style="display: flex;">
+                    <div style="display: flex; width:100%; height: 100px;">
+                        <div class="form-group text-primary" style="text-align: center; width:33.3%; height:100%; padding: 20px 20px 20px 30px;">
+                            @Html.LabelFor(m => m.Slogan1)
+                            @Html.TextAreaFor(m => m.Slogan1, new { @class = "form-control", style = "max-width: none; height: 100px;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide vehicle short description.</small>
+                        </div>
+
+                        <div class="form-group text-primary" style="text-align: center; width:33.3%; height:100%; padding: 20px 30px 20px 20px;">
+                            @Html.LabelFor(m => m.Slogan2)
+                            @Html.TextAreaFor(m => m.Slogan2, new { @class = "form-control", style = "max-width: none; height: 100px;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide vehicle long description.</small>
+                        </div>
+
+                        <div class="form-group text-primary" style="text-align: center; width:33.3%; height:100%; padding: 20px 30px 20px 20px;">
+                            @Html.LabelFor(m => m.Slogan3)
+                            @Html.TextAreaFor(m => m.Slogan3, new { @class = "form-control", style = "max-width: none; height: 100px;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide vehicle long description.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Image paths section*@
+            <div style="width: 100%;  margin-bottom:50px;">
+                <h2 class="card-title text-info" style="text-align: center;">images path</h2>
+                <small id="emailHelp" class="form-text text-info" style="text-align: center;">Path example: ~/Content/images/vehicles/modelSb.png</small>
+                <div style="display: flex; width:100%;">
+                    <div class="form-group text-primary" style="width: 33.3%; text-align: center; margin-top: 30px; margin-bottom: 30px; padding-left:20px; padding-right: 20px;">
+                        @Html.LabelFor(m => m.ImagePath1)
+                        @Html.TextBoxFor(m => m.ImagePath1, new { @class = "form-control", style = "max-width: none;" })
+                        <small id="emailHelp" class="form-text text-info">Please provide first image.</small>
+                    </div>
+                    <div class="form-group text-primary" style="width: 33.3%; text-align: center; margin-top: 30px; margin-bottom: 30px; padding-left:20px; padding-right: 20px;">
+                        @Html.LabelFor(m => m.ImagePath2)
+                        @Html.TextBoxFor(m => m.ImagePath2, new { @class = "form-control", style = "max-width: none;" })
+                        <small id="emailHelp" class="form-text text-info">Please provide second image.</small>
+                    </div>
+                    <div class="form-group text-primary" style="width: 33.3%; text-align: center; margin-top: 30px; margin-bottom: 30px; padding-left:20px; padding-right: 20px;">
+                        @Html.LabelFor(m => m.ImagePath3)
+                        @Html.TextBoxFor(m => m.ImagePath3, new { @class = "form-control", style = "max-width: none;" })
+                        <small id="emailHelp" class="form-text text-info">Please provide third image.</small>
+                    </div>
+                </div>
+            </div>
+
+            @*Descriptions section*@
+            <div style="width: 100%; height: 580px;">
+                <h2 class="card-title text-info" style="text-align: center; margin-bottom:10px;">vehicle descriptions</h2>
+                <div style="display: flex;">
+                    <div style="display: flex; width:100%; height: 300px;">
+                        <div class="form-group text-primary" style="text-align: center; width:50%; height:100%; padding: 20px 20px 20px 30px;">
+                            @Html.LabelFor(m => m.ShortDescription, new { style = "font-size: 1rem;" })
+                            @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control", style = "max-width: none; height: 400px;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide vehicle short description.</small>
+                        </div>
+
+                        <div class="form-group text-primary" style="text-align: center; width:50%; height:100%; padding: 20px 30px 20px 20px;">
+                            @Html.LabelFor(m => m.LongDescription, new { style = "font-size: 1rem;" })
+                            @Html.TextAreaFor(m => m.LongDescription, new { @class = "form-control", style = "max-width: none; height: 400px;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide vehicle long description.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Details section*@
+            <div style="width: 100%;">
+                <h2 class="card-title text-info" style="text-align: center; margin-bottom:10px;">vehicle details</h2>
+                <div style="display: flex;">
+                    <div style="width: 33.3%; margin-left:auto; margin-right:auto; padding-left: 10px; padding-right: 10px;">
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetTransmission)
+                            @Html.TextBoxFor(m => m.DetTransmission, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info" style="text-align: center;">Please provide transmission parameter.</small>
+                        </div>
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetWheelbase)
+                            @Html.TextBoxFor(m => m.DetWheelbase, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide wheelbase parameter.</small>
+                        </div>
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetCurbWeight)
+                            @Html.TextBoxFor(m => m.DetCurbWeight, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide curb weight parameter.</small>
+                        </div>
+                    </div>
+
+                    <div style="width: 33.3%; margin-left:auto; margin-right:auto; padding-left: 10px; padding-right: 10px;">
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetMotor)
+                            @Html.TextBoxFor(m => m.DetMotor, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide motor parameter.</small>
+                        </div>
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetBodyStyle)
+                            @Html.TextBoxFor(m => m.DetBodyStyle, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide body style parameter.</small>
+                        </div>
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetProduction)
+                            @Html.TextBoxFor(m => m.DetProduction, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide production parameter.</small>
+                        </div>
+                    </div>
+
+                    <div style="width: 33.3%; margin-left:auto; margin-right:auto; padding-left: 10px; padding-right: 10px;">
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetLength)
+                            @Html.TextBoxFor(m => m.DetLength, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide length parameter.</small>
+                        </div>
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetWidth)
+                            @Html.TextBoxFor(m => m.DetWidth, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide width parameter.</small>
+                        </div>
+                        <div class="form-group text-primary" style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+                            @Html.LabelFor(m => m.DetHeight)
+                            @Html.TextBoxFor(m => m.DetHeight, new { @class = "form-control", style = "max-width: none;" })
+                            <small id="emailHelp" class="form-text text-info">Please provide height parameter.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 30px; width:100%; display: flex; justify-content: space-between;">
+            <a href="@Url.Action("CarIndex", "Car")" class="btn btn-outline-secondary" style="float:left; width:35%;">back</a>
+            <button type="submit" class="btn btn-outline-info" style="float:right; width:35%;">save</button>
+        </div>
+
+        //tutaj jest hiiden field (niewidoczny na formie) z ID, bo logika kontrolera bazuje na ID wiec musze go dodac
+        @Html.HiddenFor(m => m.Id);
+    }
+</div>
+

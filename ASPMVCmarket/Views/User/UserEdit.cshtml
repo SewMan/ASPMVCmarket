@@ -1,0 +1,103 @@
+﻿@model ASPMVCmarket.Models.ApplicationUser
+
+@{
+    /**/
+
+    ViewBag.Title = "TESLA | User Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="margin-bottom: 20px;">
+    <div class="card-body text-white bg-info border-info border">
+        <h1 class="card-title text-white" style="text-align: center; margin-bottom:10px;">@ViewBag.Title</h1>
+        <h6 class="card-subtitle mb-2 text-white" style="text-align: center;">
+            Welcome in the administrator's Users Panel mode.
+        </h6>
+    </div>
+</div>
+
+@using (Html.BeginForm("UserSave", "User"))
+{
+
+    <div style="display:flex; flex-direction:column; margin-top: 55px; margin-bottom: 65px; padding-bottom: 25px; padding-top:25px; border: 4px solid #1F9BCF;">
+        @*Details section*@
+        <div style="width: 100%;">
+            <h1 class="card-title text-info" style="text-align: center; margin-bottom:10px; font-size: 3.0rem;">@Model.Name @Model.Surname</h1>
+            <small id="emailHelp" class="form-text text-info" style="text-align: center;">ID: @Model.Id</small>
+            <div style="display: flex;">
+                <div style="width: 33.3%; padding-left: 10px; padding-right: 10px;">
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info" style="text-align: center;">User's name.</small>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @style= "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                    </div>
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">User's surname.</small>
+                        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control", @style = "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.Surname, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                    </div>
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">User's email.</small>
+                        <fieldset disabled="">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @style = "max-width: none;" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div style="width: 33.3%; margin-left:auto; margin-right:auto; padding-left: 10px; padding-right: 10px;">
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <fieldset disabled="">
+                            <small id="emailHelp" class="form-text text-info">User's nickname.</small>
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @style = "max-width: none;" })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                        </fieldset>
+                    </div>
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">User's birth date.</small>
+                        @Html.TextBoxFor(m => m.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control", @style = "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "form-text", @style= "font-size: 0.7rem;" })
+                    </div>
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">User's phone number.</small>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @style = "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                    </div>
+                </div>
+
+                <div style="width: 33.3%; margin-left:auto; margin-right:auto; padding-left: 10px; padding-right: 10px;">
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">Address: street.</small>
+                        @Html.TextBoxFor(m => m.Street, new { @class = "form-control", @style = "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.Street, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                    </div>
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">Address: city.</small>
+                        @Html.TextBoxFor(m => m.City, new { @class = "form-control", @style = "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.City, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                    </div>
+                    <div class="form-group text-primary" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <small id="emailHelp" class="form-text text-info">Address: city-code.</small>
+                        @Html.TextBoxFor(m => m.CityCode, new { @class = "form-control", @style = "max-width: none;" })
+                        @Html.ValidationMessageFor(m => m.CityCode, "", new { @class = "form-text", @style = "font-size: 0.7rem;" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
+    @*<button type="submit" class="btn btn-primary">Save</button>*@
+    <div style="margin-bottom: 30px; width:100%; display: flex; justify-content: space-between;">
+        <a href="@Url.Action("UserIndex", "User")" class="btn btn-outline-secondary" style="float:left; width:35%;">back</a>
+        <button type="submit" class="btn btn-outline-info" style="float:right; width:35%;">save</button>
+    </div>
+}
+
+@* Client side validation *@
+@section scripts
+{
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

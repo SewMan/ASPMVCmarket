@@ -216,7 +216,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\CarController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -260,6 +262,26 @@
     <Compile Include="Migrations\201711282056428_CarModelUpdate.cs" />
     <Compile Include="Migrations\201711282056428_CarModelUpdate.Designer.cs">
       <DependentUpon>201711282056428_CarModelUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801142213284_AddSlogansImagePathShortDescription.cs" />
+    <Compile Include="Migrations\201801142213284_AddSlogansImagePathShortDescription.Designer.cs">
+      <DependentUpon>201801142213284_AddSlogansImagePathShortDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801162127070_UpdateCarModel.cs" />
+    <Compile Include="Migrations\201801162127070_UpdateCarModel.Designer.cs">
+      <DependentUpon>201801162127070_UpdateCarModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801162207446_UpdateCarModel1.cs" />
+    <Compile Include="Migrations\201801162207446_UpdateCarModel1.Designer.cs">
+      <DependentUpon>201801162207446_UpdateCarModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801172124348_AddedRequiredParamInCarModel.cs" />
+    <Compile Include="Migrations\201801172124348_AddedRequiredParamInCarModel.Designer.cs">
+      <DependentUpon>201801172124348_AddedRequiredParamInCarModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201633218_UpdateIdentityModel.cs" />
+    <Compile Include="Migrations\201801201633218_UpdateIdentityModel.Designer.cs">
+      <DependentUpon>201801201633218_UpdateIdentityModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -483,7 +505,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Founder.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -506,13 +528,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Car\CarRandom.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Car\CarIndex.cshtml" />
     <Content Include="Views\Customer\CustomerDetails.cshtml" />
     <Content Include="Views\Customer\CustomerIndex.cshtml" />
     <Content Include="Views\Car\CarDetails.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Car\CarEdit.cshtml" />
+    <Content Include="Views\User\UserIndex.cshtml" />
+    <Content Include="Views\User\UserDetails.cshtml" />
+    <Content Include="Views\User\UserEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -552,6 +579,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711282056428_CarModelUpdate.resx">
       <DependentUpon>201711282056428_CarModelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801142213284_AddSlogansImagePathShortDescription.resx">
+      <DependentUpon>201801142213284_AddSlogansImagePathShortDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801162127070_UpdateCarModel.resx">
+      <DependentUpon>201801162127070_UpdateCarModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801162207446_UpdateCarModel1.resx">
+      <DependentUpon>201801162207446_UpdateCarModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801172124348_AddedRequiredParamInCarModel.resx">
+      <DependentUpon>201801172124348_AddedRequiredParamInCarModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201633218_UpdateIdentityModel.resx">
+      <DependentUpon>201801201633218_UpdateIdentityModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

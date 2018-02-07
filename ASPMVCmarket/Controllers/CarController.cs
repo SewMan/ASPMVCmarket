@@ -7,6 +7,7 @@ using ASPMVCmarket.Models;
 
 namespace ASPMVCmarket.Controllers
 {
+    [AllowAnonymous]
     public class CarController : Controller
     {
         //Baza danych -> _context
@@ -15,6 +16,7 @@ namespace ASPMVCmarket.Controllers
         public CarController()
         {
             _context = new ApplicationDbContext();
+            //_context.us
         }
 
         protected override void Dispose(bool disposing)
@@ -30,25 +32,6 @@ namespace ASPMVCmarket.Controllers
             return View(cars);
         }
 
-        // GET: http://localhost:62273/Car/CarRandom
-        // ActionResult is an abstract class that can have several subtypes.
-        public ActionResult CarRandom()
-        {
-            var car = new Car() { Name = "Clio III" };
-            return View(car);
-        }
-
-        private IEnumerable<Car> GetCars()
-        {
-            return new List<Car>
-            {
-                new Car() { Id = 1, Name= "Model S" },
-                new Car() { Id = 2, Name = "Model M3"},
-                new Car() { Id = 3, Name = "Model F2"},
-                new Car() { Id = 4, Name = "Model Sport"}
-            };
-        }
-
         public ActionResult CarDetails(int id)
         {
             var car = _context.Cars.SingleOrDefault(c => c.Id == id);
@@ -57,6 +40,54 @@ namespace ASPMVCmarket.Controllers
             {
                 return HttpNotFound();
             }
+
+            return View(car);
+        }
+
+        [HttpPost]
+        public ActionResult CarSave(Car car)
+        {
+            if (car.Id == 0)
+            {
+                _context.Cars.Add(car);
+            }
+            else
+            {
+                var carInDb = _context.Cars.Single(c => c.Id == car.Id);
+                carInDb.Name = car.Name;
+                carInDb.Slogan1 = car.Slogan1;
+                carInDb.Slogan2 = car.Slogan2;
+                carInDb.Slogan3 = car.Slogan3;
+
+                carInDb.ShortDescription = car.ShortDescription;
+                carInDb.LongDescription = car.LongDescription;
+
+                carInDb.ImagePath1 = car.ImagePath1;
+                carInDb.ImagePath2 = car.ImagePath2;
+                carInDb.ImagePath3 = car.ImagePath3;
+
+                carInDb.DetBodyStyle = car.DetBodyStyle;
+                carInDb.DetCurbWeight = car.DetCurbWeight;
+                carInDb.DetHeight = car.DetHeight;
+                carInDb.DetLength = car.DetLength;
+                carInDb.DetMotor = car.DetMotor;
+                carInDb.DetPrice = car.DetPrice;
+                carInDb.DetProduction = car.DetProduction;
+                carInDb.DetTransmission = car.DetTransmission;
+                carInDb.DetWheelbase = car.DetWheelbase;
+                carInDb.DetWidth = car.DetWidth;
+            }
+            
+            _context.SaveChanges();
+            return RedirectToAction("CarIndex", "Car");
+        }
+
+        public ActionResult CarEdit(int id)
+        {
+            var car = _context.Cars.SingleOrDefault(c => c.Id == id);
+
+            if (car == null)
+                return HttpNotFound();
 
             return View(car);
         }
